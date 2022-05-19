@@ -31,6 +31,13 @@ public class BlogController {
 		return mv;
 	}
 	
+	@RequestMapping(value = "/posts", method = RequestMethod.GET)
+	public ModelAndView getPostss() {
+		ModelAndView mv = new ModelAndView("posts");
+		List<Post> posts = blogService.findAll();
+		mv.addObject("posts", posts);
+		return mv;
+	}
 	
 	@RequestMapping(value = "/posts/{id}", method = RequestMethod.GET)
 	public ModelAndView getPostDetails(@PathVariable("id") long id) {
