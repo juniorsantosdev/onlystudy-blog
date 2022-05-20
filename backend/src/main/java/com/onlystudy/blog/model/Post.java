@@ -2,6 +2,7 @@ package com.onlystudy.blog.model;
 
 import java.time.LocalDate;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,7 +27,7 @@ public class Post {
 	@NotBlank
 	private String autor;
 	
-	@JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
+	@JsonFormat(pattern="dd-MM-yyyy")
 	private LocalDate data;
 	
 	@NotBlank

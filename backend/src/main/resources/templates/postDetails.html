@@ -20,6 +20,7 @@
     <header>
         <nav class="navbar navbar-light bg-light">
             <span class="navbar-brand mb-0 h1" style="font-weight: bold">OnlyStudy</span>
+            <a th:href="${(#mvc.url('BC#getEditPost').arg(0, post.id)).build()}" class="btn btn-primary" role="button">Editar Post</a>
         </nav>
     </header>
 

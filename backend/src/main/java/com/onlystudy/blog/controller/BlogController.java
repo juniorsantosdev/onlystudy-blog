@@ -62,4 +62,22 @@ public class BlogController {
 		blogService.save(post);
 		return "redirect:/posts";
 	}
+	
+	
+	@RequestMapping(value = "/posts/editPost/{id}", method = RequestMethod.GET)
+	public ModelAndView getEditPost(@PathVariable("id") long id) {
+		ModelAndView mv = new ModelAndView("editPost");
+		Post post = blogService.findById(id);
+		mv.addObject("post", post);
+		return mv;
+			}
+	
+	@RequestMapping(value= "/posts/editPost/{id}", method = RequestMethod.POST)
+	public String getEditPosts(Post post) {
+		post.setData(LocalDate.now());
+		blogService.save(post);
+		return "redirect:/posts/{id}";
+	
+	}			
+	
 }
