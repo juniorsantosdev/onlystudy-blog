@@ -11,31 +11,34 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 
-<body>
+<body style="background-color: #cbc0d3;">
 
 
-    <header>
-        <nav class="navbar navbar-light bg-light">
-            <span class="navbar-brand mb-0 h1" style="font-weight: bold;">OnlyStudy</span>
-            <a href="/newpost" class="btn btn-primary" role="button">Novo Post</a>
+    <header >
+        <nav class="navbar navbar-light" style="background-color:#9c89b8 ">
+           
+           	<span class="navbar-brand mb-0 h1 ms-4" style="font-weight: bold;">OnlyStudy</span>
+            <a href="/newpost" class="btn btn-secondary me-4" role="button">Novo Post</a>
+         
+            
         </nav>
     </header>
 
-    <section>
-        <div class="container" style="width: 60%; padding-bottom: 30px;">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
+    <section class="container mt-3" style="height:100vh; background-color: #cbc0d3;">
+        <div  style=" padding-bottom: 30px;">
+            <nav aria-label="breadcrumb" style="background-color: #cbc0d3;">
+                <ol class="breadcrumb" style="background-color: #cbc0d3; padding-left: 0px;">
                     <li class="breadcrumb-item active" aria-current="page">Posts</li>
                 </ol>
             </nav>
-            <div class="card shadow-sm bg-white rounded" style="margin-top: 20px" th:each="post : ${posts}">
+            <div class="card shadow-sm rounded" style="background-color:#feeafa; margin-top: 20px" th:each="post : ${posts}">
                 <div class="card-body">
                     <p class="card-subtitle mb-2 text-muted" style="font-size: 20px;">
                         <span th:text="${post.autor}"></span>
                         <span th:text="${post.data}"></span>
                     </p>
 
-                    <a th:href="${(#mvc.url('BC#getPostDetails').arg(0, post.id)).build()}"><h4 class="card-title" style="font-weight: bold; color:black; padding-top: 5px;"><span th:text="${post.titulo}"></span></h4><a>
+                    <a style="text-decoration: none;" th:href="${(#mvc.url('BC#getPostDetails').arg(0, post.id)).build()}"><h4 class="card-title " style="font-weight: bold; color:black; padding-top: 5px;"><span th:text="${post.titulo}"></span></h4><a>
 
 
 

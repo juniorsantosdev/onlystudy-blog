@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnlyStudy</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link rel="stylesheet" href="./style.css">
+        <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+
+
+    <header>
+        <nav class=" navigation">
+            <ul>
+                <li><a href="/posts">Home</a></li>
+                <li><a href="/newpost">Novo Post</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li id="threeline-icon" class="threeline-icon" onclick="openNav()">&#9776;</li>
+            </ul>
+            <!-- <span class="navbar-brand mb-0 h1" style="font-weight: bold;">OnlyStudy</span>
+            <a href="/newpost" class="btn btn-primary" role="button">Novo Post</a> -->
+        </nav>
+    </header>
+
+    <section>
+        <div class="container" style="height: 100vh; padding-top: 20px; padding-bottom: 30px; margin-top: 20px;">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb" style="background-color: grey; ; padding-left: 0px;">
+                    <li class="breadcrumb-item active" style="color:#fff" aria-current="page">Posts</li>
+                </ol>
+            </nav>
+            <div class="card shadow-sm bg-white rounded " style="margin-top: 20px; background-color: grey" th:each="post : ${posts}">
+                <div class="card-body" style="background-color: e9edc9">
+                    <p class="card-subtitle mb-2 text-muted" style="font-size: 20px; ">
+                        <span th:text="${post.autor}"></span>
+                        <span th:text="${post.data}"></span>
+                    </p>
+
+                    <a th:href="${(#mvc.url('BC#getPostDetails').arg(0, post.id)).build()}"><h4 class="card-title" style="font-weight: bold; color:black; padding-top: 5px;"><span th:text="${post.titulo}"></span></h4><a>
+
+
+
+                </div>
+            </div>
+            <br>
+        </div>
+    </section>
+
+
+
+</body>
+
+</html>

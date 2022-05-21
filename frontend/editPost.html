@@ -23,7 +23,6 @@
     <header>
         <nav class="navbar navbar-light bg-light">
             <span class="navbar-brand mb-0 h1" style="font-weight: bold;">OnlyStudy</span>
-            
         </nav>
     </header>
 
@@ -40,18 +39,18 @@
             <div> 
                 <form method="post">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="titulo" placeholder="Título *">
+                        <input type="text" class="form-control" name="titulo" placeholder="" th:text="${post.titulo}">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="autor" placeholder="Autor *">
+                        <input type="text" class="form-control" name="autor" placeholder="Autor *" th:text="${post.autor}">
                     </div>
 
-                    <textarea id="summernote" type="text" class="form-control" name="texto" placeholder="Texto *" ></textarea>
+                    <textarea id="summernote" spellcheck="true" type="text" class="form-control" name="texto" placeholder="Texto *" th:utext="${post.texto}" ></textarea>
 
                     <small class="form-text text=muted">(*) Campos obrigatórios</small>
 
                     <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Publicar</button>
-                    <a href="/posts" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
+                    <a th:href="${(#mvc.url('BC#getPostDetails').arg(0, post.id)).build()}" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
 
                 </form>
 
@@ -64,8 +63,7 @@
     $('#summernote').summernote({
         placeholder: 'Texto *',
         tabsize: 2,
-        height: "300",
-        
+        height: 300
     });
 </script>
 
