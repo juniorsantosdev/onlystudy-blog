@@ -17,12 +17,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>    
 </head>
 
-<body>
+<body style="background-color: #cbc0d3;">
 
 
     <header>
-        <nav class="navbar navbar-light bg-light">
-            <span class="navbar-brand mb-0 h1" style="font-weight: bold;">OnlyStudy</span>
+        <nav class="navbar navbar-light" style="background-color:#9c89b8 ">
+            <span class="navbar-brand mb-0 h1 ms-4" style="font-weight: bold;">OnlyStudy</span>
             
         </nav>
     </header>
@@ -30,7 +30,7 @@
     <section>
         <div class="container" style="width: 60%; padding-bottom: 30px;">
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
+                <ol class="breadcrumb" style="background-color: #cbc0d3; padding-left: 0px;">
                     <li class="breadcrumb-item " aria-current="page"><a href="/posts">Posts</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Novo Post</li>
                 </ol>
@@ -39,18 +39,18 @@
 			<th:block th:include="mensagemValidacao"></th:block>
             <div> 
                 <form method="post">
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="titulo" placeholder="Título *">
+                    <div class="form-group"  >
+                        <input type="text" class="form-control mb-2" name="titulo" placeholder="Título *" style="background-color:#feeafa;">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="autor" placeholder="Autor *">
+                        <input type="text" class="form-control mb-2" name="autor" placeholder="Autor *" style="background-color:#feeafa;">
                     </div>
 
                     <textarea id="summernote" type="text" class="form-control" name="texto" placeholder="Texto *" ></textarea>
 
                     <small class="form-text text=muted">(*) Campos obrigatórios</small>
 
-                    <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Publicar</button>
+                    <button type="submit" class="btn btn-secondary" style="margin-top: 10px;">Publicar</button>
                     <a href="/posts" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
 
                 </form>

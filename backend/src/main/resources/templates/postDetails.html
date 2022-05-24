@@ -13,21 +13,21 @@
     
 </head>
 
-<body>
+<body style="background-color: #cbc0d3;">
 
 
 
     <header>
-        <nav class="navbar navbar-light bg-light">
-            <span class="navbar-brand mb-0 h1" style="font-weight: bold">OnlyStudy</span>
-            <a th:href="${(#mvc.url('BC#getEditPost').arg(0, post.id)).build()}" class="btn btn-primary" role="button">Editar Post</a>
+        <nav class="navbar navbar-light" style="background-color:#9c89b8 ">
+            <span class="navbar-brand mb-0 h1 ms-4" style="font-weight: bold">OnlyStudy</span>
+            <a th:href="${(#mvc.url('BC#getEditPost').arg(0, post.id)).build()}" class="btn btn-secondary me-4" role="button">Editar Post</a>
         </nav>
     </header>
 
-    <main>
-        <div class="container" style="width: 60%; padding-bottom: 30px;">
+    <main style="width: 100%;">
+        <div class="container mt-3" style=" padding-bottom: 30px; background-color: #feeafa;">
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
+                <ol class="breadcrumb" style="background-color: #feeafa; padding-left: 0px;">
                     <li class="breadcrumb-item " aria-current="page"><a href="/posts">Posts</a></li>
                     <li class="breadcrumb-item active" aria-current="page"th:text="${post.titulo}"></li>
                 </ol>
