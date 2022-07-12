@@ -18,7 +18,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         "/",
         "/posts",
         "/api/posts",
-        "/posts/{id}"
+        "/posts/{id}",
+        "/api/posts/{id}",
     };
 
     @Override
