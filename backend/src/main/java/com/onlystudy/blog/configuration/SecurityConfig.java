@@ -17,7 +17,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private static final String[] AUTH_LIST = {
         "/",
         "/posts",
-    
+        "/api/posts",
         "/posts/{id}"
     };
 
